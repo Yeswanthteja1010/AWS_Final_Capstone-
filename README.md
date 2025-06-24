@@ -100,7 +100,9 @@ terraform apply
 ---
 
 ##🌐 7. Global Traffic Management (Route 53)
-🧠 Failover Logic
+
+###🧠 Failover Logic
+
 Record Type	Region	Role	Health Check
 A (Alias)	us-west-1	PRIMARY	Enabled
 A (Alias)	us-west-2	SECONDARY	N/A
@@ -110,7 +112,9 @@ If the primary ALB in us-west-1 becomes unhealthy, traffic automatically fails o
 ---
 
 ##🔁 8. CI/CD Pipeline Setup
-📦 Tools Used
+
+###📦 Tools Used
+
 Service	Purpose
 GitHub	Source code repository
 CodePipeline	Orchestrates CI/CD process
@@ -139,7 +143,9 @@ Monitor build logs and metrics in CloudWatch
 ---
 
 ##📊 9. Monitoring & Alerting
-🔔 CloudWatch Alarms + SNS
+
+###🔔 CloudWatch Alarms + SNS
+
 Metric	Threshold	Action
 RDS CPUUtilization	> 75%	SNS Email
 Pod CrashLoop	Detected	Notification
@@ -151,6 +157,7 @@ Alarms trigger email alerts via configured SNS topics.
 ---
 
 ##🔐 10. Security Best Practices
+
 ✅ Private RDS – Database not publicly accessible
 
 ✅ IAM Roles – Scoped permissions for EKS, CI/CD, and DB access
