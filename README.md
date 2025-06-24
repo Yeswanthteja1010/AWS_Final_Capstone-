@@ -97,8 +97,9 @@ terraform validate
 terraform plan
 terraform apply
 
+---
 
-###🌐 7. Global Traffic Management (Route 53)
+##🌐 7. Global Traffic Management (Route 53)
 🧠 Failover Logic
 Record Type	Region	Role	Health Check
 A (Alias)	us-west-1	PRIMARY	Enabled
@@ -106,7 +107,9 @@ A (Alias)	us-west-2	SECONDARY	N/A
 
 If the primary ALB in us-west-1 becomes unhealthy, traffic automatically fails over to us-west-2.
 
-###🔁 8. CI/CD Pipeline Setup
+---
+
+##🔁 8. CI/CD Pipeline Setup
 📦 Tools Used
 Service	Purpose
 GitHub	Source code repository
@@ -133,7 +136,9 @@ Use IAM roles with scoped EKS/CodeBuild access
 
 Monitor build logs and metrics in CloudWatch
 
-###📊 9. Monitoring & Alerting
+---
+
+##📊 9. Monitoring & Alerting
 🔔 CloudWatch Alarms + SNS
 Metric	Threshold	Action
 RDS CPUUtilization	> 75%	SNS Email
@@ -143,7 +148,9 @@ Logs from EKS applications and node metrics are streamed to CloudWatch.
 
 Alarms trigger email alerts via configured SNS topics.
 
-###🔐 10. Security Best Practices
+---
+
+##🔐 10. Security Best Practices
 ✅ Private RDS – Database not publicly accessible
 
 ✅ IAM Roles – Scoped permissions for EKS, CI/CD, and DB access
@@ -154,7 +161,9 @@ Alarms trigger email alerts via configured SNS topics.
 
 ✅ Secrets Management – Use AWS Secrets Manager or Kubernetes Secrets
 
-###🧰 11. Useful Commands
+---
+
+##🧰 11. Useful Commands
 
 # Connect kubectl to EKS
 aws eks update-kubeconfig --region <region> --name <cluster-name>
