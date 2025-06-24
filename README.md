@@ -103,9 +103,10 @@ terraform apply
 
 ### 🧠 Failover Logic
 
-Record Type	Region	Role	Health Check
-A (Alias)	us-west-1	PRIMARY	Enabled
-A (Alias)	us-west-2	SECONDARY	N/A
+| Record Type | Region    | Role      | Health Check |
+| ----------- | --------- | --------- | ------------ |
+| A (Alias)   | us-west-1 | PRIMARY   | Enabled      |
+| A (Alias)   | us-west-2 | SECONDARY | N/A          |
 
 If the primary ALB in us-west-1 becomes unhealthy, traffic automatically fails over to us-west-2.
 
@@ -115,15 +116,17 @@ If the primary ALB in us-west-1 becomes unhealthy, traffic automatically fails o
 
 ### 📦 Tools Used
 
-Service	Purpose
-GitHub	Source code repository
-CodePipeline	Orchestrates CI/CD process
-CodeBuild	Builds and deploys Docker images
-Amazon ECR	Stores containerized application
-Amazon EKS	Runs application workloads
-Route 53	DNS failover and routing
-SonarQube	Code quality analysis
-CloudWatch	Logs and performance monitoring
+| Service      | Purpose                          |
+| ------------ | -------------------------------- |
+| GitHub       | Source code repository           |
+| CodePipeline | Orchestrates CI/CD process       |
+| CodeBuild    | Builds and deploys Docker images |
+| Amazon ECR   | Stores containerized application |
+| Amazon EKS   | Runs application workloads       |
+| Route 53     | DNS failover and routing         |
+| SonarQube    | Code quality analysis            |
+| CloudWatch   | Logs and performance monitoring  |
+
 
 🛠️ Setup Instructions
 Create CodePipeline with:
@@ -146,9 +149,10 @@ Monitor build logs and metrics in CloudWatch
 
 ### 🔔 CloudWatch Alarms + SNS
 
-Metric	Threshold	Action
-RDS CPUUtilization	> 75%	SNS Email
-Pod CrashLoop	Detected	Notification
+| Metric             | Threshold | Action       |
+| ------------------ | --------- | ------------ |
+| RDS CPUUtilization | > 75%     | SNS Email    |
+| Pod CrashLoop      | Detected  | Notification |
 
 Logs from EKS applications and node metrics are streamed to CloudWatch.
 
