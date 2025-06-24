@@ -128,11 +128,9 @@ Alerts delivered via SNS Topic (email notification)
 Private RDS: Not publicly accessible
 IAM Roles: Least privilege principle
 Ingress Rules: Restrict traffic using SGs and NACLs
-12. Future Enhancements
-Integrate Prometheus + Grafana for observability
-Extend CI/CD with canary/blue-green deployments
 
 📝 Useful Commands
+
 aws eks update-kubeconfig --region <region> --name <cluster-name>
 sudo apt install helm
 helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
